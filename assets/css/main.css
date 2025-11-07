@@ -3920,10 +3920,7 @@ body.is-preload #intro:not(.hidden)+#header+#nav {
 	width: calc(100% - 4rem);
 	max-width: 72rem;
 	z-index: 2;
-	overflow: hidden;
-	/* 🔥 impede o carrossel de sair da área branca */
-	border-radius: 12px;
-	/* op */
+
 }
 
 #main>* {
