@@ -2186,20 +2186,20 @@ button,
 	-webkit-appearance: none;
 	-ms-appearance: none;
 	appearance: none;
-	-moz-transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, color 0.2s ease-in-out;
-	-webkit-transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, color 0.2s ease-in-out;
-	-ms-transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, color 0.2s ease-in-out;
-	transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, color 0.2s ease-in-out;
+	-moz-transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, color 0.2s ease-in-out, transform 0.2s ease-in-out;
+	-webkit-transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, color 0.2s ease-in-out, transform 0.2s ease-in-out;
+	-ms-transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, color 0.2s ease-in-out, transform 0.2s ease-in-out;
+	transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, color 0.2s ease-in-out, transform 0.2s ease-in-out;
 	border: 0;
-	border-radius: 0;
+	border-radius: 8px;
 	cursor: pointer;
 	display: inline-block;
 	font-family: "Source Sans Pro", Helvetica, sans-serif;
-	font-size: 0.8rem;
-	font-weight: 900;
+	font-size: 0.9rem;
+	font-weight: 700;
 	letter-spacing: 0.075em;
-	height: 3rem;
-	line-height: 3rem;
+	height: 2.3rem;
+	line-height: 1.2rem;
 	padding: 0 2rem;
 	text-align: center;
 	text-decoration: none;
@@ -2322,9 +2322,9 @@ input[type="reset"],
 input[type="button"],
 button,
 .button {
-	background-color: transparent;
-	box-shadow: inset 0 0 0 2px #212931;
-	color: #212931 !important;
+	background-color: #212931;
+	box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+	color: #ffffff !important;
 }
 
 input[type="submit"]:hover,
@@ -2332,8 +2332,10 @@ input[type="reset"]:hover,
 input[type="button"]:hover,
 button:hover,
 .button:hover {
-	box-shadow: inset 0 0 0 2px #ffa114;
-	color: #ffa114 !important;
+	background-color: #ffa114;
+	box-shadow: 0 6px 12px rgba(255, 161, 20, 0.3);
+	color: #ffffff !important;
+	transform: translateY(-3px);
 }
 
 input[type="submit"].primary,
@@ -2342,7 +2344,7 @@ input[type="button"].primary,
 button.primary,
 .button.primary {
 	background-color: #212931;
-	box-shadow: none;
+	box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 	color: #ffffff !important;
 }
 
@@ -2352,6 +2354,8 @@ input[type="button"].primary:hover,
 button.primary:hover,
 .button.primary:hover {
 	background-color: #ffa114;
+	box-shadow: 0 6px 12px rgba(255, 161, 20, 0.3);
+	transform: translateY(-3px);
 }
 
 /* Form */
@@ -3955,13 +3959,14 @@ body.is-preload #intro:not(.hidden)+#header+#nav {
 
 #main>* {
 	padding: 4rem 4rem 2rem 4rem;
-	border-top: solid 2px #eeeeee;
+	border-top: solid 0px #a9a9a9;
 	margin: 0;
 }
 
 #main>*:first-child {
 	border-top: 0;
-}
+	margin-bottom: -76px;
+}	
 
 #main>footer {
 	text-align: center;
@@ -4016,19 +4021,22 @@ body.is-preload #intro:not(.hidden)+#header+#nav {
 
 #main>.posts {
 	display: grid;
-	grid-template-columns: repeat(4, 1fr);
+	grid-template-columns: repeat(3, 1fr);
 	gap: 1.5rem;
 	align-items: stretch;
 	text-align: left;
 	width: 100%;
-	padding: 0;
+	padding: 2.5rem;
+	background: #ffffff;
+	border-radius: 16px;
+	box-shadow: inset 0 2px 6px rgba(0,0,0,0.05);
 }
 
 /* Responsive breakpoints: 3/2/1 columns added below */
 
 /* 3 columns for mid-large screens */
 @media screen and (max-width: 1280px) {
-	#main>.posts { grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+	#main>.posts { grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
 }
 
 
@@ -4052,6 +4060,7 @@ body.is-preload #intro:not(.hidden)+#header+#nav {
 	border-radius: 8px;
 	padding: 1rem;
 	box-shadow: 0 4px 14px rgba(16,24,40,0.04);
+	border: 2px solid transparent;
 	overflow: hidden;
 	text-align: left;
 	display: flex;
@@ -4059,12 +4068,13 @@ body.is-preload #intro:not(.hidden)+#header+#nav {
 	justify-content: flex-start;
 	align-items: stretch;
 	min-height: 320px;
-	transition: transform .18s ease, box-shadow .18s ease;
+	transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
 }
 
 #main>.posts>article:hover {
 	transform: translateY(-6px);
 	box-shadow: 0 10px 30px rgba(16,24,40,0.08);
+	border-color: #ffa114;
 }
 
 #main>.posts>article header {
@@ -4164,7 +4174,7 @@ body.is-preload #intro:not(.hidden)+#header+#nav {
 	width: 100%;
 	max-width: 220px;
 	display: inline-block;
-	margin: 0 auto;
+	margin: 9px;
 	padding: .55rem 0;
 	font-size: .95rem;
 	border-radius: 6px;
@@ -4173,13 +4183,13 @@ body.is-preload #intro:not(.hidden)+#header+#nav {
 
 #main>.posts>article p {
 	display: -webkit-box;
-	-webkit-line-clamp: 3; /* one less line to keep cards compact */
+	-webkit-line-clamp: 3; 
 	-webkit-box-orient: vertical;
 	overflow: hidden;
 	color: #444;
-	font-size: .82rem; /* smaller description text */
+	font-size: .82rem; 
 	line-height: 1.06;
-	margin: 0 0 .6rem 0; /* reduced paragraph bottom spacing */
+	margin: 0 0 .6rem 0;
 } 
 
 #main>.posts>article .actions {
@@ -4209,15 +4219,15 @@ body.is-preload #intro:not(.hidden)+#header+#nav {
 @media screen and (max-width: 736px) {
 
     #main>.posts {
-        grid-template-columns: repeat(3, 1fr); /* Força 3 colunas no telemóvel */
+        grid-template-columns: repeat(2, 1fr); 
         gap: .6rem;
-        /* Garante que a linha da grelha tenha a altura do maior card */
+        
         align-items: stretch; 
     }
 
     #main>.posts>article {
-        /* AQUI ESTÁ A CORREÇÃO DE ALINHAMENTO: */
-        height: 100%; /* Força o card a ocupar a altura total da linha */
+        
+        height: 100%; 
         
         min-height: 220px;
         padding: .5rem;
@@ -4232,7 +4242,7 @@ body.is-preload #intro:not(.hidden)+#header+#nav {
         margin-bottom: .25rem;
         padding: 0;
         display: block;
-        text-align: center; /* center header on mobile */
+        text-align: center; 
     }
 
     #main>.posts>article header h2 {
@@ -4240,7 +4250,7 @@ body.is-preload #intro:not(.hidden)+#header+#nav {
         margin: 0;
         line-height: 1.05;
         color: inherit;
-        display: block; /* ensure full-width on mobile too */
+        display: block; 
         width: 100%;
         max-width: 100%;
         overflow-wrap: anywhere;
@@ -4605,7 +4615,7 @@ body.is-preload #intro:not(.hidden)+#header+#nav {
 
 #footer>section.split>section {
 	padding: 3rem 4rem 1rem 4rem;
-	border-top: solid 2px #e2e2e2;
+	border-top: solid 1px #ffa621;
 }
 
 #footer>section.split>section:first-child {
