@@ -3940,10 +3940,17 @@ body.is-preload #intro:not(.hidden)+#header+#nav {
 	background-color: #ffffff;
 	position: relative;
 	margin: 0 auto;
-	width: calc(100% - 4rem);
+	/* Account for 4rem padding on left and right of children to avoid overflow */
+	width: calc(100% - 8rem);
 	max-width: 72rem;
+	box-sizing: border-box;
 	z-index: 2;
 
+}
+
+/* Responsive tweak: on small screens children have smaller padding, so reduce subtraction */
+@media screen and (max-width: 736px) {
+	#main { width: calc(100% - 4rem); }
 }
 
 #main>* {
@@ -4072,7 +4079,64 @@ body.is-preload #intro:not(.hidden)+#header+#nav {
 	line-height: 1.08;
 	font-weight: 600;
 	color: #222;
-	display: block;
+	display: block; /* fill container to avoid overflow */
+	width: 100%;
+	max-width: 100%;
+	box-sizing: border-box;
+	overflow-wrap: anywhere; /* allow long words/URLs to break */
+	word-break: break-word;
+	hyphens: auto;
+	position: relative; /* for underline */
+	transition: color .18s ease, transform .18s ease;
+}
+
+/* Ensure links inside titles inherit styles */
+#main>.posts>article header h2 a {
+	color: inherit;
+	text-decoration: none;
+}
+
+/* Animated underline */
+#main>.posts>article header h2:after,
+#main>.posts>article header h2 a:after {
+	content: "";
+	position: absolute;
+	left: 50%;
+	bottom: -6px;
+	width: 0;
+	height: 3px;
+	background: linear-gradient(90deg,#ffb86b,#ffa114);
+	border-radius: 3px;
+	transform: translateX(-50%) scaleX(0);
+	transform-origin: center;
+	transition: transform .25s cubic-bezier(.2,.8,.2,1), width .25s cubic-bezier(.2,.8,.2,1);
+	pointer-events: none;
+}
+
+/* Hover state */
+#main>.posts>article header h2:hover,
+#main>.posts>article header h2 a:hover {
+	color: #ff8a00;
+	transform: translateY(-3px);
+}
+
+#main>.posts>article header h2:hover:after,
+#main>.posts>article header h2 a:hover:after {
+	width: 60%;
+	transform: translateX(-50%) scaleX(1);
+}
+
+/* Smaller underline on small screens */
+@media screen and (max-width:736px) {
+	#main>.posts>article header h2:after,
+	#main>.posts>article header h2 a:after {
+		bottom: -5px;
+		height: 2px;
+	}
+	#main>.posts>article header h2:hover,
+	#main>.posts>article header h2 a:hover {
+		transform: translateY(-2px);
+	}
 }
 
 /* Price / badge */
@@ -4176,6 +4240,11 @@ body.is-preload #intro:not(.hidden)+#header+#nav {
         margin: 0;
         line-height: 1.05;
         color: inherit;
+        display: block; /* ensure full-width on mobile too */
+        width: 100%;
+        max-width: 100%;
+        overflow-wrap: anywhere;
+        word-break: break-word;
     }
 
     #main>.posts>article header h2:first-child {
