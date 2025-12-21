@@ -1,0 +1,51 @@
+name: CI/CD to GitHub Pages
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install & build (if needed)
+        run: |
+          if [ -f package.json ]; then
+            npm ci
+            npm run build
+          fi
+
+      - name: Prepare Pages artifact
+        run: |
+          # If your build outputs to "dist", use that. Otherwise copy repo root to "public".
+          if [ -d dist ]; then
+            rm -rf public || true
+            mv dist public
+          else
+            rm -rf public || true
+            mkdir public
+            # copy all (exclude git, workflows, node_modules)
+            rsync -av --exclude='.git' --exclude='.github' --exclude='node_modules' --exclude='public' ./ public/
+          fi
+
+      - name: Upload for Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: public
+
+  deploy:
+    needs: build-and-deploy
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+
+    steps:
+      - name: Deploy
+        uses: actions/deploy-pages@v4
