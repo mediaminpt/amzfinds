@@ -5193,3 +5193,34 @@ body.is-preload #intro:not(.hidden)+#header+#nav {
 }
 
 
+
+/* Comparison Table Highlights */
+.comparison-table-container {
+    margin-bottom: 4rem;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+/* Product Card Enhancements */
+.product-card .button.primary {
+    background-color: #FF9900; /* Amazon Orange */
+    color: #fff !important;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+}
+
+.product-card .button.primary:hover {
+    background-color: #e68a00;
+    transform: translateY(-2px);
+}
+
+/* Pros and Cons Lists */
+.product-card ul.alt li {
+    border-bottom: 1px solid #eee;
+    padding: 0.5em 0;
+    font-size: 0.9em;
+}
+
