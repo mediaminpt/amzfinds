@@ -111,17 +111,27 @@ window.initMain = function($) {
 	};
 
 	// Play initial animations on page load.
-		$window.on('load', function() {
+		var removePreload = function() {
 			window.setTimeout(function() {
 				$body.removeClass('is-preload');
 			}, 100);
-		});
+		};
+
+		if (document.readyState === 'complete') {
+			removePreload();
+		} else {
+			$window.on('load', removePreload);
+		}
 
 	// Scrolly.
 		$('.scrolly').scrolly();
 
 	// Background.
 		$wrapper._parallax(0.925);
+
+		if (document.readyState === 'complete') {
+			$window.trigger('scroll');
+		}
 
 	// Nav Panel.
 
