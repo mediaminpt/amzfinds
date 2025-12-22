@@ -109,9 +109,19 @@
                 </div>
 </header>
 </section>
+
+<!-- Filter Controls -->
+<div class="filter-container" style="text-align: center; margin-bottom: 2rem;">
+    <button class="button small filter-btn active" data-filter="all">All</button>
+    <button class="button small filter-btn" data-filter="headphones">Headphones</button>
+    <button class="button small filter-btn" data-filter="keyboards">Keyboards</button>
+    <button class="button small filter-btn" data-filter="gadgets">Gadgets & Setup</button>
+    <button class="button small filter-btn" data-filter="minecraft">Minecraft Decor</button>
+</div>
+
 <!--Começam os posts-->
-<section class="posts">
-<article class="product-card">
+<section class="posts" id="product-grid">
+<article class="product-card" data-category="headphones">
 <header><span class="date">Best Overall</span>
 <h2><a href="">High Resolution Noise Cancelling Headphones</a></h2>
 </header>
@@ -121,7 +131,7 @@
 <li><a class="button primary icon solid fa-shopping-cart" href="https://amzn.to/47DPl5Y" target="_blank">Check Price on Amazon</a></li>
 </ul>
 </article>
-<article class="product-card">
+<article class="product-card" data-category="headphones">
 <header><span class="date">Best Value</span>
 <h2><a href="">Sony Noise Canceling Headphones</a></h2>
 </header>
@@ -131,7 +141,7 @@
 <li><a class="button primary icon solid fa-shopping-cart" href="https://amzn.to/3LTTlIf" target="_blank">Check Price on Amazon</a></li>
 </ul>
 </article>
-<article class="product-card">
+<article class="product-card" data-category="gadgets">
 <header><span class="date">Editor's Choice</span>
 <h2><a href=""><br/> Label Maker Machine Bluetooth</a></h2>
 </header>
@@ -141,7 +151,7 @@
 <li><a class="button primary icon solid fa-shopping-cart" href="https://www.amazon.com/-/pt/dp/B0F8Q1QQTC/140-3593811-3152263?linkCode=sl1&amp;tag=mediamin-20&amp;linkId=a65b048c32cbd1f977cb38f412bd3418&amp;language=pt_BR&amp;th=1" target="_blank">Check Price on Amazon</a></li>
 </ul>
 </article>
-<article>
+<article data-category="gadgets">
 <header>
 <h2><a href=""><br/>Travel Cable Organizer</a></h2>
 </header>
@@ -151,7 +161,7 @@
 <li><a class="button primary icon solid fa-shopping-cart" href="https://www.amazon.com/dp/B0924H4XB9/ref=cm_sw_r_as_gl_api_gl_i_dl_0X6AS6FB6PCJ5MB7G8VR?linkCode=ml1&amp;tag=mediamin-20&amp;linkId=e477507b260e94de1dd4fa744686aefa" target="_blank">Check Price on Amazon</a></li>
 </ul>
 </article>
-<article>
+<article data-category="gadgets">
 <header>
 <h2><a href=""><br/>Compressed Air Duster</a></h2>
 </header>
@@ -161,7 +171,7 @@
 <li><a class="button primary icon solid fa-shopping-cart" href="https://www.amazon.com/dp/B0DSW7R4VN?linkCode=ml1&amp;tag=mediamin-20&amp;linkId=e6dd2c1bca83840e533882d1fea8e6e6" target="_blank">Check Price on Amazon</a></li>
 </ul>
 </article>
-<article>
+<article data-category="gadgets">
 <header>
 <h2><a href=""><br/>Kit Multi Adaptadores</a></h2>
 </header>
@@ -171,7 +181,7 @@
 <li><a class="button primary icon solid fa-shopping-cart" href="https://www.amazon.com/dp/B09NSKJYX6/ref=cm_sw_r_as_gl_api_gl_i_EFJF0V54K6J5BZ91DR20?linkCode=ml1&amp;tag=mediamin-20&amp;linkId=cdbcda451a869492f1d734b39bf6ead1" target="_blank">Check Price on Amazon</a></li>
 </ul>
 </article>
-<article>
+<article data-category="gadgets">
 <header>
 <h2><a href=""><br/>Multi Charging Cable Case Convertor</a></h2>
 </header>
@@ -181,7 +191,7 @@
 <li><a class="button primary icon solid fa-shopping-cart" href="https://www.amazon.com/dp/B0C85BVS5V/ref=cm_sw_r_as_gl_api_gl_i_ATP5N23ZT6R006BY7SE2?linkCode=ml1&amp;tag=mediamin-20&amp;linkId=f5c16fcd4bbb084dda81638f51022ced" target="_blank">Check Price on Amazon</a></li>
 </ul>
 </article>
-<article>
+<article data-category="headphones">
 <header>
 <h2><a href="">Beats Solo 4 Wireless Bluetooth On-ear Headphones</a></h2>
 </header>
@@ -191,7 +201,7 @@
 <li><a class="button primary icon solid fa-shopping-cart" href="https://amzn.to/3JABHIL" target="_blank">Check Price on Amazon</a></li>
 </ul>
 </article>
-<article>
+<article data-category="gadgets">
 <header>
 <h2><a href=""><br/>Universal Travel Adapter</a></h2>
 </header>
@@ -202,7 +212,7 @@
 </ul>
 </article>
 <!--Para baixo é Minecraft-->
-<article>
+<article data-category="minecraft">
 <header>
 <h2><a href=""><br/>Minecraft Creeper Lamp Alarm Clock</a></h2>
 </header>
@@ -212,7 +222,7 @@
 <li><a class="button primary icon solid fa-shopping-cart" href="https://www.amazon.com/dp/B0BRYT6QPP/ref=cm_sw_r_as_gl_api_gl_i_YXM8AP4EMZ2W7JAG1YC8?linkCode=ml1&amp;tag=mediamin-20&amp;linkId=c951df163420786fad461f28d1b9a2e5" target="_blank">Check Price on Amazon</a></li>
 </ul>
 </article>
-<article>
+<article data-category="minecraft">
 <header>
 <h2><a href=""><br/>Minecraft Fox Lamp</a></h2>
 </header>
@@ -222,7 +232,7 @@
 <li><a class="button primary icon solid fa-shopping-cart" href="https://www.amazon.com/dp/B09XN77DVV/ref=cm_sw_r_as_gl_api_gl_i_TDCD87Z9T78RKRP0DT1S?linkCode=ml1&amp;tag=mediamin-20&amp;linkId=6391b1c90ace86c7049d6c20161479a7" target="_blank">Check Price on Amazon</a></li>
 </ul>
 </article>
-<article>
+<article data-category="minecraft">
 <header>
 <h2><a href=""><br/>Minecraft Wolf Lamp</a></h2>
 </header>
@@ -232,7 +242,7 @@
 <li><a class="button primary icon solid fa-shopping-cart" href="https://www.amazon.com/dp/B0DYJYB1BR/ref=cm_sw_r_as_gl_api_gl_i_XQGAGGEMM2MKF8PTAQAY?linkCode=ml1&amp;tag=mediamin-20&amp;linkId=9841e8c8e26e6428a19cef5db0fb18ef" target="_blank">Check Price on Amazon</a></li>
 </ul>
 </article>
-<article>
+<article data-category="minecraft">
 <header>
 <h2><a href=""><br/>Minecraft Nether Lamp</a></h2>
 </header>
@@ -242,7 +252,7 @@
 <li><a class="button primary icon solid fa-shopping-cart" href="https://www.amazon.com/Minecraft-Multi-Nether-Portal-movimiento-escritorio/dp/B0993PRH4V?psc=1&amp;pd_rd_w=u1Fww&amp;content-id=amzn1.sym.55c0153f-1fb7-42ff-8241-d1c0f3732289&amp;pf_rd_p=55c0153f-1fb7-42ff-8241-d1c0f3732289&amp;pf_rd_r=5KJH3EZ10CPA2F7EGAPW&amp;pd_rd_wg=fSzcv&amp;pd_rd_r=18251e65-ab62-43b8-8224-643732c7478e&amp;sp_csd=d2lkZ2V0TmFtZT1zcF9kZXRhaWxfdGhlbWF0aWM%3D&amp;linkCode=sl1&amp;tag=mediamin-20&amp;linkId=9086548b1e05e48516fccdb746972086&amp;language=es_US" target="_blank">Check Price on Amazon</a></li>
 </ul>
 </article>
-<article>
+<article data-category="headphones">
 <header>
 <h2><a href="">Hyperx Cloud III Gaming Headset</a></h2>
 </header>
@@ -252,7 +262,7 @@
 <li><a class="button primary icon solid fa-shopping-cart" href="https://amzn.to/4oShAVF" target="_blank">Check Price on Amazon</a></li>
 </ul>
 </article>
-<article>
+<article data-category="keyboards">
 <header>
 <h2><a href="">Aesthetic Keyboard Pro Wireless Mechanical Keyboard 75%</a></h2>
 </header>
@@ -262,7 +272,7 @@
 <li><a class="button primary icon solid fa-shopping-cart" href="https://amzn.to/4qTjF5w" target="_blank">Check Price on Amazon</a></li>
 </ul>
 </article>
-<article>
+<article data-category="gadgets">
 <header>
 <h2><a href="">Dual Monitor Stand Full Adjustable Monitor Desk Mount</a></h2>
 </header>
@@ -272,7 +282,7 @@
 <li><a class="button primary icon solid fa-shopping-cart" href="https://amzn.to/4qyx3M1" target="_blank">Check Price on Amazon</a></li>
 </ul>
 </article>
-<article>
+<article data-category="gadgets">
 <header>
 <h2><a href="">Marvel: Venom Mobile Phone &amp; Gaming Controller Holder</a></h2>
 </header>
@@ -282,7 +292,7 @@
 <li><a class="button primary icon solid fa-shopping-cart" href="https://amzn.to/4oUneqf" target="_blank">Check Price on Amazon</a></li>
 </ul>
 </article>
-<article>
+<article data-category="gadgets">
 <header>
 <h2><a href=""><br/>Cable Management Kit</a></h2>
 </header>
@@ -292,7 +302,7 @@
 <li><a class="button primary icon solid fa-shopping-cart" href="https://amzn.to/48ZNWZM" target="_blank">Check Price on Amazon</a></li>
 </ul>
 </article>
-<article>
+<article data-category="gadgets">
 <header>
 <h2><a href="">Pegboard Kit Setup Organizer</a></h2>
 </header>
@@ -335,7 +345,7 @@
 <li><a class="button primary icon solid fa-shopping-cart" href="https://www.amazon.com/dp/B0DSW7R4VN?linkCode=ml1&amp;tag=mediamin-20&amp;linkId=e6dd2c1bca83840e533882d1fea8e6e6">Check Price on Amazon</a></li>
 </ul>
 </article>
-<article>
+<article data-category="gadgets">
 <header>
 <h2><a href=""><br/>Nintendo Switch Pillowcase </a></h2>
 </header>
@@ -382,5 +392,48 @@
 <script src="assets/js/util.js"></script>
 <script src="assets/js/main.js"></script>
 <script src="assets/js/load-components.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const products = document.querySelectorAll('.posts article');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterBtns.forEach(b => b.classList.remove('primary'));
+                filterBtns.forEach(b => b.classList.remove('active'));
+                // Add active class to clicked button
+                btn.classList.add('primary');
+                btn.classList.add('active');
+
+                const filterValue = btn.getAttribute('data-filter');
+
+                products.forEach(product => {
+                    if (filterValue === 'all') {
+                        product.style.display = 'flex'; // Restore flex display
+                        product.style.opacity = '1';
+                        product.style.transform = 'scale(1)';
+                    } else {
+                        if (product.getAttribute('data-category') === filterValue) {
+                            product.style.display = 'flex';
+                            setTimeout(() => {
+                                product.style.opacity = '1';
+                                product.style.transform = 'scale(1)';
+                            }, 10);
+                        } else {
+                            product.style.display = 'none';
+                            product.style.opacity = '0';
+                            product.style.transform = 'scale(0.95)';
+                        }
+                    }
+                });
+            });
+        });
+        
+        // Set "All" as primary initially
+        const allBtn = document.querySelector('.filter-btn[data-filter="all"]');
+        if(allBtn) allBtn.classList.add('primary');
+    });
+</script>
 </body>
 </html>
