@@ -5396,3 +5396,83 @@ body.is-preload #intro:not(.hidden)+#header+#nav {
     padding: 0;
 }
 
+
+/* Pros and Cons Styling */
+.pros-cons-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    justify-content: center;
+}
+
+.pros-list, .cons-list {
+    flex: 1;
+    min-width: 200px;
+    padding: 1rem;
+    border-radius: 8px;
+    font-family: 'Source Sans Pro', Helvetica, sans-serif;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    text-align: left;
+}
+
+.pros-list {
+    background-color: #f0fdf4; /* Very Soft Green */
+    border: 1px solid #bbf7d0;
+}
+
+.cons-list {
+    background-color: #fef2f2; /* Very Soft Red */
+    border: 1px solid #fecaca;
+}
+
+.pros-list h4, .cons-list h4 {
+    margin-bottom: 0.5rem;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 700;
+}
+
+.pros-list h4 {
+    color: #15803d;
+}
+
+.cons-list h4 {
+    color: #b91c1c;
+}
+
+.pros-list ul, .cons-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.pros-list li, .cons-list li {
+    margin-bottom: 0.3rem;
+    display: flex;
+    align-items: flex-start;
+    color: #374151;
+}
+
+.pros-list li:before {
+    content: '\f00c'; /* FontAwesome Check */
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    color: #15803d;
+    margin-right: 0.5rem;
+    margin-top: 4px;
+    font-size: 0.8em;
+}
+
+.cons-list li:before {
+    content: '\f00d'; /* FontAwesome Times */
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    color: #b91c1c;
+    margin-right: 0.5rem;
+    margin-top: 4px;
+    font-size: 0.8em;
+}
+
