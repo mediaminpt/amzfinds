@@ -40,6 +40,6 @@ $(document).ready(function () {
             if (window.initMain) {
                 window.initMain(jQuery);
             }
-        }, 10);
+        }, 50);
     });
 });

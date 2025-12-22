@@ -147,7 +147,7 @@
 						.css('-webkit-tap-highlight-color', 'rgba(0,0,0,0)');
 
 					$this
-						.on('click', 'a', function(event) {
+						.on('click', 'a:not(.gtranslate_wrapper a)', function(event) {
 
 							var $a = $(this),
 								href = $a.attr('href'),
