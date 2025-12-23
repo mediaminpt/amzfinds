@@ -5239,10 +5239,11 @@ body.is-preload #intro:not(.hidden)+#header+#nav {
 /* Comparison Table Highlights */
 .comparison-table-container {
     margin-bottom: 4rem;
-    background: #fff;
+    background: #f8f9fa;
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border: 1px solid #e9ecef;
 }
 
 /* Product Card Enhancements */
