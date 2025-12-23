@@ -3804,7 +3804,7 @@ body.is-preload #intro:not(.hidden)+#header+#nav {
 	position: relative;
 	width: calc(100% - 4rem);
 	max-width: 72rem;
-	z-index: 2;
+	z-index: 10;
 }
 
 #nav ul.links li.gtranslate-item {
