@@ -1,3 +1,26 @@
+/* 
+ * Configuração do Google Analytics
+ * Substitua 'G-XXXXXXXXXX' pelo seu ID de medição do Google Analytics
+ */
+(function() {
+    var gaId = 'G-XXXXXXXXXX'; // <--- COLOQUE SEU ID AQUI
+    
+    if (gaId !== 'G-XXXXXXXXXX') {
+        var script = document.createElement('script');
+        script.async = true;
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=' + gaId;
+        document.head.appendChild(script);
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', gaId);
+        console.log('Google Analytics carregado com ID: ' + gaId);
+    } else {
+        console.log('Google Analytics não configurado. Adicione seu ID em assets/js/load-components.js');
+    }
+})();
+
 $(document).ready(function () {
     // Helper function to load component and handle errors
     function loadComponent(url, placeholderId) {
