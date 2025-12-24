@@ -5506,7 +5506,12 @@ body.is-preload #intro:not(.hidden)+#header+#nav {
     }
 
     .pros-list li, .cons-list li {
-        font-size: 0.9rem; /* Restore readable font size */
+        font-size: 0.85rem; /* Slightly smaller for mobile */
+    }
+
+    .pros-list ul, .cons-list ul {
+        height: 80px; /* Fixed height to ensure all cards are equal length */
+        overflow-y: auto;
     }
 }
 
