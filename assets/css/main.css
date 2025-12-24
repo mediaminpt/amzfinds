@@ -4313,8 +4313,8 @@ body.is-preload #intro:not(.hidden)+#header+#nav {
     }
 
     #main>.posts .image.fit {
-        max-height: 140px;
-        aspect-ratio: 4 / 3;
+        max-height: none; /* Remove height limit to let aspect-ratio dictate size */
+        aspect-ratio: 1 / 1; /* Square shape makes images significantly larger */
     }
 
     #main>.posts>article img {
@@ -5475,7 +5475,7 @@ body.is-preload #intro:not(.hidden)+#header+#nav {
     content: '\f00c'; /* FontAwesome Check */
     font-family: 'Font Awesome 5 Free';
     font-weight: 900;
-    color: #d4af37; /* Gold Icon */
+    color: 	#fdd03d; /* Gold Icon */
     margin-right: 0.5rem;
     margin-top: 3px;
     font-size: 0.8em;
@@ -5508,17 +5508,6 @@ body.is-preload #intro:not(.hidden)+#header+#nav {
     .pros-list li, .cons-list li {
         font-size: 0.9rem; /* Restore readable font size */
     }
-}
-}
-
-.cons-list li:before {
-    content: '\f00d'; /* FontAwesome Times */
-    font-family: 'Font Awesome 5 Free';
-    font-weight: 900;
-    color: #b91c1c;
-    margin-right: 0.5rem;
-    margin-top: 4px;
-    font-size: 0.8em;
 }
 
 /* Filter Buttons */
