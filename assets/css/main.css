@@ -2718,7 +2718,7 @@ input[type="radio"]:focus+label:before {
 .image img {
 	display: block;
 	border-radius: 8px;
-	border: 0.5px solid #ffe866;
+	border: 0.5px solid #d4dad8;
 }
 
 .image.left,
@@ -5398,66 +5398,60 @@ body.is-preload #intro:not(.hidden)+#header+#nav {
 }
 
 
-/* Pros and Cons Styling */
+/* Pros and Cons Styling - Modern Clean Design */
 .pros-cons-container {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: row; /* Always side-by-side */
     gap: 1rem;
     margin-bottom: 2rem;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: stretch;
 }
 
 .pros-list, .cons-list {
     flex: 1;
-    min-width: 200px;
+    width: 48%; /* Force roughly half width */
     padding: 1rem;
-    border-radius: 8px;
+    border-radius: 6px;
+    background: #ffffff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     font-family: 'Source Sans Pro', Helvetica, sans-serif;
     font-size: 0.9rem;
-    line-height: 1.6;
+    line-height: 1.5;
     text-align: left;
-    box-sizing: border-box; /* Ensure padding doesn't increase width */
+    box-sizing: border-box;
 }
 
-@media screen and (max-width: 736px) {
-    .pros-cons-container {
-        flex-direction: column; /* Stack vertically on mobile */
-        align-items: stretch;
-        gap: 1rem;
-    }
-
-    .pros-list, .cons-list {
-        min-width: 0;
-        width: 100%;
-        margin-bottom: 0; /* Reset margin if any */
-    }
-}
-
+/* Pros Style */
 .pros-list {
-    background-color: #f0fdf4; /* Very Soft Green */
-    border: 1px solid #bbf7d0;
+    border-top: 3px solid #d4af37; /* Soft Gold */
+    background: linear-gradient(to bottom, #fffbf0 0%, #ffffff 100%);
+    border-left: 1px solid #e5e7eb;
+    border-right: 1px solid #e5e7eb;
+    border-bottom: 1px solid #e5e7eb;
 }
 
+/* Cons Style */
 .cons-list {
-    background-color: #fef2f2; /* Very Soft Red */
-    border: 1px solid #fecaca;
+    border-top: 3px solid #bdc3c7; /* Soft Silver */
+    background: linear-gradient(to bottom, #f8f9fa 0%, #ffffff 100%);
+    border-left: 1px solid #e5e7eb;
+    border-right: 1px solid #e5e7eb;
+    border-bottom: 1px solid #e5e7eb;
 }
 
 .pros-list h4, .cons-list h4 {
-    margin-bottom: 0.5rem;
-    font-size: 0.8rem;
+    margin-bottom: 0.75rem;
+    font-size: 0.85rem;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
-    font-weight: 700;
+    letter-spacing: 0.05em;
+    font-weight: 800;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    padding-bottom: 0.5rem;
 }
 
-.pros-list h4 {
-    color: #15803d;
-}
-
-.cons-list h4 {
-    color: #b91c1c;
-}
+.pros-list h4 { color: #b08d26; } /* Darker Gold for text */
+.cons-list h4 { color: #7f8c8d; } /* Darker Silver/Grey for text */
 
 .pros-list ul, .cons-list ul {
     list-style: none;
@@ -5469,17 +5463,52 @@ body.is-preload #intro:not(.hidden)+#header+#nav {
     margin-bottom: 0.5rem;
     display: flex;
     align-items: flex-start;
-    color: #374151;
+    color: #4b5563;
+    font-size: 0.85rem;
+}
+
+.pros-list li:last-child, .cons-list li:last-child {
+    margin-bottom: 0;
 }
 
 .pros-list li:before {
     content: '\f00c'; /* FontAwesome Check */
     font-family: 'Font Awesome 5 Free';
     font-weight: 900;
-    color: #15803d;
+    color: #d4af37; /* Gold Icon */
     margin-right: 0.5rem;
-    margin-top: 4px;
+    margin-top: 3px;
     font-size: 0.8em;
+    flex-shrink: 0;
+}
+
+.cons-list li:before {
+    content: '\f00d'; /* FontAwesome Times */
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    color: #bdc3c7; /* Silver Icon */
+    margin-right: 0.5rem;
+    margin-top: 3px;
+    font-size: 0.8em;
+    flex-shrink: 0;
+}
+
+/* Mobile Optimization */
+@media screen and (max-width: 736px) {
+    .pros-cons-container {
+        flex-direction: column; /* Stack vertically on mobile */
+        gap: 1rem;
+    }
+    
+    .pros-list, .cons-list {
+        width: 100%; /* Full width */
+        padding: 1rem;
+    }
+
+    .pros-list li, .cons-list li {
+        font-size: 0.9rem; /* Restore readable font size */
+    }
+}
 }
 
 .cons-list li:before {
