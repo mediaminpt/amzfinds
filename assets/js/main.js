@@ -80,9 +80,7 @@ window.initMain = function($) {
 
 				$window
 					.off('scroll._parallax');
-
 			};
-
 			// Disable parallax on ..
 				if (browser.name == 'ie'			// IE
 				||	browser.name == 'edge'			// Edge

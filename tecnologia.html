@@ -90,14 +90,64 @@
                 </header>
             </section>
 
+            <hr />
+
             <!-- Filter Controls -->
-            <div class="filter-container" style="text-align: center; margin-bottom: 1rem;">
+            <div class="filter-container" style="text-align: center; margin-bottom: 1rem; position: relative; z-index: 10;">
                 <button class="button small filter-btn active" data-filter="all">All</button>
-                <button class="button small filter-btn" data-filter="headphones">Headphones</button>
-                <button class="button small filter-btn" data-filter="keyboards">Keyboards</button>
-                <button class="button small filter-btn" data-filter="gadgets">Gadgets & Setup</button>
-                <button class="button small filter-btn" data-filter="minecraft">Minecraft Decor</button>
+                
+                <!-- Headphones Dropdown -->
+                <div class="filter-dropdown" style="display: inline-block; position: relative;">
+                    <button class="button small filter-btn" data-filter="headphones">Headphones <i class="fas fa-caret-down"></i></button>
+                    <div class="filter-dropdown-content">
+                        <button class="button small sub-filter-btn" data-parent="headphones" data-sub="all">All Headphones</button>
+                        <button class="button small sub-filter-btn" data-parent="headphones" data-sub="noise-cancelling">Noise Cancelling</button>
+                        <button class="button small sub-filter-btn" data-parent="headphones" data-sub="gaming">Gaming</button>
+                        <button class="button small sub-filter-btn" data-parent="headphones" data-sub="wireless">Wireless</button>
+                    </div>
+                </div>
+                
+                <!-- Keyboards Dropdown -->
+                <div class="filter-dropdown" style="display: inline-block; position: relative;">
+                    <button class="button small filter-btn" data-filter="keyboards" id="keyboards-btn">Keyboards <i class="fas fa-caret-down"></i></button>
+                    <div class="filter-dropdown-content" id="keyboards-dropdown">
+                        <button class="button small sub-filter-btn" data-parent="keyboards" data-sub="all">All Keyboards</button>
+                        <button class="button small sub-filter-btn" data-parent="keyboards" data-sub="mechanical">Mechanical</button>
+                        <button class="button small sub-filter-btn" data-parent="keyboards" data-sub="membrane">Membrane</button>
+                        <button class="button small sub-filter-btn" data-parent="keyboards" data-sub="wireless">Wireless</button>
+                        <button class="button small sub-filter-btn" data-parent="keyboards" data-sub="ergonomic">Ergonomic</button>
+                        <button class="button small sub-filter-btn" data-parent="keyboards" data-sub="backlit">Backlit</button>
+                    </div>
+                </div>
+
+                <!-- Gadgets Dropdown -->
+                <div class="filter-dropdown" style="display: inline-block; position: relative;">
+                    <button class="button small filter-btn" data-filter="gadgets">Gadgets & Setup <i class="fas fa-caret-down"></i></button>
+                    <div class="filter-dropdown-content">
+                        <button class="button small sub-filter-btn" data-parent="gadgets" data-sub="all">All Gadgets</button>
+                        <button class="button small sub-filter-btn" data-parent="gadgets" data-sub="cables-adapters">Cables & Adapters</button>
+                        <button class="button small sub-filter-btn" data-parent="gadgets" data-sub="tools">Tools & Cleaning</button>
+                        <button class="button small sub-filter-btn" data-parent="gadgets" data-sub="organization">Organization</button>
+                    </div>
+                </div>
+
+                <!-- Setup Decoration Dropdown -->
+                <div class="filter-dropdown" style="display: inline-block; position: relative;">
+                    <button class="button small filter-btn" data-filter="setup-decoration">Setup Decoration <i class="fas fa-caret-down"></i></button>
+                    <div class="filter-dropdown-content">
+                        <button class="button small sub-filter-btn" data-parent="setup-decoration" data-sub="all">All Decoration</button>
+                        <button class="button small sub-filter-btn" data-parent="setup-decoration" data-sub="lighting">Lighting</button>
+                        <button class="button small sub-filter-btn" data-parent="setup-decoration" data-sub="organization">Organization</button>
+                        <button class="button small sub-filter-btn" data-parent="setup-decoration" data-sub="collectibles">Collectibles</button>
+                        <button class="button small sub-filter-btn" data-parent="setup-decoration" data-sub="soft-goods">Soft Goods</button>
+                    </div>
+                </div>
+
+                <!-- Silver Tech Button -->
+                <button class="button small filter-btn" data-filter="silver-tech">Silver Tech</button>
             </div>
+
+
 
             <!-- Dynamic Comparison Tables -->
             <div id="comparison-section">
@@ -213,9 +263,9 @@
                     </div>
                 </div>
 
-                <!-- Minecraft Table -->
-                <div class="comparison-table-container" data-category="minecraft" style="display: none;">
-                    <h3 style="text-align: center;">Top 5 Minecraft Decor</h3>
+                <!-- Setup Decoration Table -->
+                <div class="comparison-table-container" data-category="setup-decoration" style="display: none;">
+                    <h3 style="text-align: center;">Top 5 Setup Decor</h3>
                     <div class="table-wrapper">
                         <table class="alt" style="text-align: left;">
                             <thead>
@@ -258,7 +308,7 @@
 
             <!--Começam os posts-->
             <section class="posts" id="product-grid">
-                <article class="product-card" data-category="headphones">
+                <article class="product-card" data-category="headphones silver-tech" data-subcategory="noise-cancelling">
                     <header>
                         <h2><a href="">Wentronic Y02 </a></h2>
                     </header>
@@ -284,7 +334,7 @@
                                 target="_blank">Check Price on Amazon</a></li>
                     </ul>
                 </article>
-                <article class="product-card" data-category="headphones">
+                <article class="product-card" data-category="headphones" data-subcategory="noise-cancelling">
                     <header>
                         <h2><a href="">Sony WH-1000XM5</a></h2>
                     </header>
@@ -311,7 +361,7 @@
                                 target="_blank">Check Price on Amazon</a></li>
                     </ul>
                 </article>
-                <article class="product-card" data-category="gadgets">
+                <article class="product-card" data-category="gadgets" data-subcategory="tools">
                     <header>
                         <h2><a href=""><br /> Label Maker</a></h2>
                     </header>
@@ -341,7 +391,7 @@
                                 target="_blank">Check Price on Amazon</a></li>
                     </ul>
                 </article>
-                <article data-category="gadgets">
+                <article data-category="gadgets" data-subcategory="organization">
                     <header>
                         <h2><a href=""><br />Cable Organizer</a></h2>
                     </header>
@@ -370,7 +420,7 @@
                                 target="_blank">Check Price on Amazon</a></li>
                     </ul>
                 </article>
-                <article data-category="gadgets">
+                <article data-category="gadgets" data-subcategory="tools">
                     <header>
                         <h2><a href=""><br />Air Duster</a></h2>
                     </header>
@@ -400,7 +450,7 @@
                                 target="_blank">Check Price on Amazon</a></li>
                     </ul>
                 </article>
-                <article data-category="gadgets">
+                <article data-category="gadgets" data-subcategory="cables-adapters">
                     <header>
                         <h2><a href=""><br />Adapter Kit</a></h2>
                     </header>
@@ -430,7 +480,7 @@
                                 target="_blank">Check Price on Amazon</a></li>
                     </ul>
                 </article>
-                <article data-category="gadgets">
+                <article data-category="gadgets" data-subcategory="cables-adapters">
                     <header>
                         <h2><a href=""><br />Baseus Cable</a></h2>
                     </header>
@@ -459,7 +509,7 @@
                                 target="_blank">Check Price on Amazon</a></li>
                     </ul>
                 </article>
-                <article data-category="headphones">
+                <article data-category="headphones" data-subcategory="wireless">
                     <header>
                         <h2><a href="">Beats Solo 4</a></h2>
                     </header>
@@ -485,7 +535,7 @@
                                 target="_blank">Check Price on Amazon</a></li>
                     </ul>
                 </article>
-                <article data-category="gadgets">
+                <article data-category="gadgets" data-subcategory="cables-adapters">
                     <header>
                         <h2><a href=""><br />Universal Adapter</a></h2>
                     </header>
@@ -511,8 +561,8 @@
                                 target="_blank">Check Price on Amazon</a></li>
                     </ul>
                 </article>
-                <!--Para baixo é Minecraft-->
-                <article data-category="minecraft">
+                <!--Para baixo é Setup Decoration-->
+                <article data-category="setup-decoration" data-subcategory="lighting">
                     <header>
                         <h2><a href=""><br />Creeper Lamp</a></h2>
                     </header>
@@ -542,7 +592,7 @@
                                 target="_blank">Check Price on Amazon</a></li>
                     </ul>
                 </article>
-                <article data-category="minecraft">
+                <article data-category="setup-decoration" data-subcategory="lighting">
                     <header>
                         <h2><a href=""><br />Fox Lamp</a></h2>
                     </header>
@@ -571,7 +621,7 @@
                                 target="_blank">Check Price on Amazon</a></li>
                     </ul>
                 </article>
-                <article data-category="minecraft">
+                <article data-category="setup-decoration" data-subcategory="lighting">
                     <header>
                         <h2><a href=""><br />Wolf Lamp</a></h2>
                     </header>
@@ -603,7 +653,7 @@
                                 target="_blank">Check Price on Amazon</a></li>
                     </ul>
                 </article>
-                <article data-category="minecraft">
+                <article data-category="setup-decoration" data-subcategory="lighting">
                     <header>
                         <h2><a href=""><br />Nether Lamp</a></h2>
                     </header>
@@ -632,7 +682,7 @@
                                 target="_blank">Check Price on Amazon</a></li>
                     </ul>
                 </article>
-                <article data-category="headphones">
+                <article data-category="headphones" data-subcategory="gaming">
                     <header>
                         <h2><a href="">Hyperx CloudIII</a></h2>
                     </header>
@@ -658,7 +708,7 @@
                                 target="_blank">Check Price on Amazon</a></li>
                     </ul>
                 </article>
-                <article data-category="keyboards">
+                <article data-category="keyboards" data-subcategory="mechanical wireless backlit">
                     <header>
                         <h2><a href="">AULA F75 Pro 75%</a></h2>
                     </header>
@@ -686,7 +736,7 @@
                     </ul>
                 </article>
                 <!--New keyboard-->
-                <article data-category="keyboards">
+                <article data-category="keyboards" data-subcategory="membrane backlit">
                     <header>
                         <h2><a href="">Corsair K55 CORE RGB</a></h2>
                     </header>
@@ -713,7 +763,7 @@
                     </ul>
                 </article>
 
-                <article data-category="keyboards">
+                <article data-category="keyboards" data-subcategory="mechanical backlit">
                     <header>
                         <h2><a href="">AULA WIN68 HE 60%</a></h2> 
                     </header>
@@ -740,7 +790,7 @@
                     </ul>
                 </article>
                 
-                <article data-category="keyboards">
+                <article data-category="keyboards" data-subcategory="mechanical backlit ergonomic">
                     <header>
                         <h2><a href="">Corsair K100</a></h2>
                     </header>
@@ -767,7 +817,7 @@
                     </ul>
                 </article>
 
-                <article data-category="keyboards">
+                <article data-category="keyboards" data-subcategory="mechanical wireless backlit">
                     <header>
                         <h2><a href="">EPOMAKER x Aula F75 </a></h2>
                     </header>
@@ -793,7 +843,7 @@
                                 target="_blank">Check Price on Amazon</a></li>
                     </ul>
                 </article>
-                <article data-category="gadgets">
+                <article data-category="gadgets" data-subcategory="organization">
                     <header>
                         <h2><a href="">Dual Monitor Stand</a></h2>
                     </header>
@@ -821,7 +871,7 @@
                                 target="_blank">Check Price on Amazon</a></li>
                     </ul>
                 </article>
-                <article data-category="gadgets">
+                <article data-category="setup-decoration" data-subcategory="collectibles">
                     <header>
                         <h2><a href="">Venom Holder</a></h2>
                     </header>
@@ -848,7 +898,7 @@
                                 target="_blank">Check Price on Amazon</a></li>
                     </ul>
                 </article>
-                <article data-category="gadgets">
+                <article data-category="gadgets" data-subcategory="organization">
                     <header>
                         <h2><a href=""><br />Cable Management Kit</a></h2>
                     </header>
@@ -875,7 +925,7 @@
                                 target="_blank">Check Price on Amazon</a></li>
                     </ul>
                 </article>
-                <article data-category="gadgets">
+                <article data-category="gadgets" data-subcategory="organization">
                     <header>
                         <h2><a href="">Pegboard Kit</a></h2>
                     </header>
@@ -902,7 +952,7 @@
                     </ul>
                 </article>
 
-                <article>
+                <article data-category="setup-decoration" data-subcategory="lighting">
                     <header>
                         <h2><a href="">Playstation led</a></h2>
                     </header>
@@ -931,7 +981,7 @@
                                 target="_blank">Check Price on Amazon</a></li>
                     </ul>
                 </article>
-                <article>
+                <article data-category="setup-decoration" data-subcategory="soft-goods">
                     <header>
                         <h2><a href="">Xbox Cushion</a></h2>
                     </header>
@@ -960,7 +1010,7 @@
                                 target="_blank">Check Price on Amazon</a></li>
                     </ul>
                 </article>
-                <article>
+                <article data-category="setup-decoration" data-subcategory="soft-goods">
                     <header>
                         <h2><a href="">Nintendo Rug</a></h2>
                     </header>
@@ -989,7 +1039,7 @@
                                 Price on Amazon</a></li>
                     </ul>
                 </article>
-                <article data-category="gadgets">
+                <article data-category="setup-decoration" data-subcategory="soft-goods">
                     <header>
                         <h2><a href=""><br />Nintendo Pillowcase </a></h2>
                     </header>
@@ -1018,6 +1068,151 @@
                                 target="_blank">Check Price on Amazon</a></li>
                     </ul>
                 </article>
+
+                <!-- Sony Cyber-shot DSC-W290 -->
+                <article class="product-card" data-category="silver-tech">
+                    <header>
+                        <span class="date">Sony</span>
+                        <h2><a href="https://amzn.to/4qyuZmB" target="_blank">Sony Cyber-shot DSC-W290</a></h2>
+                    </header>
+                    <a href="https://amzn.to/4qyuZmB" class="image fit" target="_blank">
+                        <img src="https://m.media-amazon.com/images/I/71q9XFobG9L._AC_SL1200_.jpg" alt="Sony Cyber-shot DSC-W290" />
+                    </a>
+                    <div class="pros-cons-container">
+                        <div class="pros-list">
+                            <h4>Pros</h4>
+                            <ul>
+                                <li>12.1 MP Resolution</li>
+                                <li>5x Optical Zoom</li>
+                            </ul>
+                        </div>
+                        <div class="cons-list">
+                            <h4>Cons</h4>
+                            <ul>
+                                <li>720p Video Recording</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <ul class="actions special">
+                        <li><a class="button primary icon solid fa-shopping-cart" href="https://amzn.to/4qyuZmB" target="_blank">Check Price on Amazon</a></li>
+                    </ul>
+                </article>
+
+                <!-- Nikon COOLPIX S3500 -->
+                <article class="product-card" data-category="silver-tech">
+                    <header>
+                        <span class="date">Nikon</span>
+                        <h2><a href="https://amzn.to/49tEFce" target="_blank">Nikon COOLPIX S3500</a></h2>
+                    </header>
+                    <a href="https://amzn.to/49tEFce" class="image fit" target="_blank">
+                        <img src="https://m.media-amazon.com/images/I/71jJk3-dL-L._AC_SL1500_.jpg" alt="Nikon COOLPIX S3500" />
+                    </a>
+                    <div class="pros-cons-container">
+                        <div class="pros-list">
+                            <h4>Pros</h4>
+                            <ul>
+                                <li>20.1 MP Sensor</li>
+                                <li>Slim & Compact Design</li>
+                            </ul>
+                        </div>
+                        <div class="cons-list">
+                            <h4>Cons</h4>
+                            <ul>
+                                <li>Battery Life</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <ul class="actions special">
+                        <li><a class="button primary icon solid fa-shopping-cart" href="https://amzn.to/49tEFce" target="_blank">Check Price on Amazon</a></li>
+                    </ul>
+                </article>
+
+                <!-- PlayStation Vita Wi-Fi Silver -->
+                <article class="product-card" data-category="silver-tech">
+                    <header>
+                        <span class="date">Sony</span>
+                        <h2><a href="https://amzn.to/3L4xzla" target="_blank">PlayStation Vita (Silver)</a></h2>
+                    </header>
+                    <a href="https://amzn.to/3L4xzla" class="image fit" target="_blank">
+                        <img src="https://m.media-amazon.com/images/I/61ho7MCC2ML._SL1500_.jpg" alt="PlayStation Vita Silver" />
+                    </a>
+                    <div class="pros-cons-container">
+                        <div class="pros-list">
+                            <h4>Pros</h4>
+                            <ul>
+                                <li>Portable Gaming Console</li>
+                                <li>Remote Play Feature</li>
+                            </ul>
+                        </div>
+                        <div class="cons-list">
+                            <h4>Cons</h4>
+                            <ul>
+                                <li>Proprietary Memory Cards</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <ul class="actions special">
+                        <li><a class="button primary icon solid fa-shopping-cart" href="https://amzn.to/3L4xzla" target="_blank">Check Price on Amazon</a></li>
+                    </ul>
+                </article>
+
+                <!-- Apple Watch Series 9 (Silver) -->
+                <article class="product-card" data-category="silver-tech">
+                    <header>
+                        <span class="date">Apple</span>
+                        <h2><a href="https://amzn.to/4pe89j6" target="_blank">Apple Watch Series 9</a></h2>
+                    </header>
+                    <a href="https://amzn.to/4pe89j6" class="image fit" target="_blank">
+                        <img src="https://m.media-amazon.com/images/I/71xSYnvg7OL._AC_SL1500_.jpg" alt="Apple Watch Series 9 Silver" />
+                    </a>
+                    <div class="pros-cons-container">
+                        <div class="pros-list">
+                            <h4>Pros</h4>
+                            <ul>
+                                <li>Advanced Health Sensors</li>
+                                <li>Always-On Retina Display</li>
+                            </ul>
+                        </div>
+                        <div class="cons-list">
+                            <h4>Cons</h4>
+                            <ul>
+                                <li>Daily Charging Required</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <ul class="actions special">
+                        <li><a class="button primary icon solid fa-shopping-cart" href="https://amzn.to/4pe89j6" target="_blank">Check Price on Amazon</a></li>
+                    </ul>
+                </article>
+
+                <!-- Samsung Digimax L700 -->
+                <article class="product-card" data-category="silver-tech">
+                    <header>
+                        <span class="date">Samsung</span>
+                        <h2><a href="https://amzn.to/44O1nsZ" target="_blank">Samsung Digimax L700</a></h2>
+                    </header>
+                    <a href="https://amzn.to/44O1nsZ" class="image fit" target="_blank">
+                        <img src="https://m.media-amazon.com/images/I/818FPnjZIbS._AC_SL1500_.jpg" alt="Samsung Digimax L700" />
+                    </a>
+                    <div class="pros-cons-container">
+                        <div class="pros-list">
+                            <h4>Pros</h4>
+                            <ul>
+                                <li>7.2 MP Vintage Look</li>
+                                <li>Compact Metal Body</li>
+                            </ul>
+                        </div>
+                        <div class="cons-list">
+                            <h4>Cons</h4>
+                            <ul>
+                                <li>Older Technology</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <ul class="actions special">
+                        <li><a class="button primary icon solid fa-shopping-cart" href="https://amzn.to/44O1nsZ" target="_blank">Check Price on Amazon</a></li>
+                    </ul>
+                </article>
             </section>
         </div>
         <div id="footer-placeholder"></div>
@@ -1030,64 +1225,7 @@
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/load-components.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const filterBtns = document.querySelectorAll('.filter-btn');
-            const products = document.querySelectorAll('.posts article');
-            const comparisonTables = document.querySelectorAll('.comparison-table-container');
-
-            filterBtns.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    // Remove active class from all buttons
-                    filterBtns.forEach(b => b.classList.remove('primary'));
-                    filterBtns.forEach(b => b.classList.remove('active'));
-                    // Add active class to clicked button
-                    btn.classList.add('primary');
-                    btn.classList.add('active');
-
-                    const filterValue = btn.getAttribute('data-filter');
-
-                    // Filter Products
-                    products.forEach(product => {
-                        if (filterValue === 'all') {
-                            product.style.display = 'flex'; // Restore flex display
-                            product.style.opacity = '1';
-                            product.style.transform = 'scale(1)';
-                        } else {
-                            if (product.getAttribute('data-category') === filterValue) {
-                                product.style.display = 'flex';
-                                setTimeout(() => {
-                                    product.style.opacity = '1';
-                                    product.style.transform = 'scale(1)';
-                                }, 10);
-                            } else {
-                                product.style.display = 'none';
-                                product.style.opacity = '0';
-                                product.style.transform = 'scale(0.95)';
-                            }
-                        }
-                    });
-
-                    // Filter Comparison Tables
-                    comparisonTables.forEach(table => {
-                        if (filterValue === 'all') {
-                            table.style.display = 'none'; // Hide all tables when showing all products
-                        } else {
-                            if (table.getAttribute('data-category') === filterValue) {
-                                table.style.display = 'block';
-                            } else {
-                                table.style.display = 'none';
-                            }
-                        }
-                    });
-                });
-            });
-
-            // Set "All" as primary initially
-            const allBtn = document.querySelector('.filter-btn[data-filter="all"]');
-            if (allBtn) allBtn.classList.add('primary');
-        });
-    </script>
+    <script src="assets/js/filters.js"></script>
 </body>
 
 </html>

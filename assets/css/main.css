@@ -5550,3 +5550,52 @@ body.is-preload #intro:not(.hidden)+#header+#nav {
     font-size: 1.2rem;
 }
 
+
+/* Dropdown Styles */
+.filter-dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 100;
+    border-radius: 4px;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 5px 0;
+}
+
+.filter-dropdown-content button {
+    color: black !important;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    text-align: left;
+    background: none;
+    border: none !important;
+    box-shadow: none !important;
+    margin: 0 !important;
+    font-size: 0.8rem;
+    line-height: 1.5;
+    border-radius: 0 !important;
+}
+
+.filter-dropdown-content button:hover {
+    background-color: #f1f1f1 !important;
+    color: #18bfef !important;
+    box-shadow: none !important;
+    transform: none !important;
+    border: none !important;
+}
+
+.filter-dropdown:hover .filter-dropdown-content {
+    display: block;
+}
+
+/* Mobile support for touch */
+.filter-dropdown.active .filter-dropdown-content {
+    display: block;
+}
+
