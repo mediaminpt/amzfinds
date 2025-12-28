@@ -2,20 +2,26 @@
     "numero": "1",
     "Estado": "Por fazer",
     "description": "Possibilitar clicar em varios filtros ao mesmo tempo para filtrar melhor",
+    "branch": "",
+
 
     "numero": "2",
     "description": "Possibildiade de filtrar por budget low med e high",
     "Estado": "Em progresso",
     "extra": "Possibilidade de inserir valor especifico",
+    "branch": "filtragem", 
+
 
     "numero": "3",
     "description": "Paginas extra tipo blog, para fazer top 5 ou top 10 ou entao artigos sobre os produtos e diferenças",
     "Estado": "por fazer",
+    "branch": "",
 
 
     "numero": "4",
     "description": "Criar uma categoria Nichos e dentro dela estará silver tech old tech e coisas mais especificas",
-    "Estado": "por fazer"
+    "Estado": "por fazer",
+    "branch": ""
 
   
 
