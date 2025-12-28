@@ -5606,3 +5606,35 @@ body.is-preload #intro:not(.hidden)+#header+#nav {
     display: block;
 }
 
+
+/* Budget Filter Styles */
+#main .budget-filter-wrapper {
+    text-align: center;
+    margin: 1rem 0;
+}
+
+.budget-main-btn {
+    background-color: transparent !important;
+    color: #212931 !important;
+    border: none !important;
+    box-shadow: none !important;
+    font-weight: normal;
+    padding: 0 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.budget-main-btn:hover {
+    color: #18bfef !important;
+    background-color: transparent !important;
+    transform: none !important;
+}
+
+.budget-main-btn i {
+    margin-right: 0.5rem;
+}
+
+.budget-main-btn .fa-caret-down {
+    margin-left: 0.5rem;
+    margin-right: 0;
+}
+
