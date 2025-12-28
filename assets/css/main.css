@@ -2851,7 +2851,7 @@ ul.actions.special li:first-child {
 }
 
 /* Re-enable actions on the index page */
-/* body.index-page #main > .posts .actions.special {
+body.index-page #main > .posts .actions.special {
 	display: -moz-flex;
 	display: -webkit-flex;
 	display: -ms-flex;
@@ -2862,7 +2862,7 @@ ul.actions.special li:first-child {
 	justify-content: center;
 	width: 100%;
 	margin-left: 0;
-} */
+}
 
 ul.actions.stacked {
 	-moz-flex-direction: column;
@@ -5605,4 +5605,5 @@ body.is-preload #intro:not(.hidden)+#header+#nav {
 .filter-dropdown.active .filter-dropdown-content {
     display: block;
 }
+
 
