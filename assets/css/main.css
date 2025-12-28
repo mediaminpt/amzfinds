@@ -1,4 +1,4 @@
-@import url(fontawesome-all.min.css);
+﻿@import url(fontawesome-all.min.css);
 @import url("https://fonts.googleapis.com/css?family=Merriweather:300,700,300italic,700italic|Source+Sans+Pro:900");
 
 /*
@@ -2844,10 +2844,14 @@ ul.actions.special li:first-child {
 /* Hide post action buttons everywhere except on the index page */
 #main > .posts .actions.special {
 	display: none !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
 }
 
 /* Re-enable actions on the index page */
-body.index-page #main > .posts .actions.special {
+/* body.index-page #main > .posts .actions.special {
 	display: -moz-flex;
 	display: -webkit-flex;
 	display: -ms-flex;
@@ -2858,7 +2862,7 @@ body.index-page #main > .posts .actions.special {
 	justify-content: center;
 	width: 100%;
 	margin-left: 0;
-}
+} */
 
 ul.actions.stacked {
 	-moz-flex-direction: column;
@@ -4068,7 +4072,7 @@ body.is-preload #intro:not(.hidden)+#header+#nav {
 #main>.posts>article {
 	background: #ffffff;
 	border-radius: 8px;
-	padding: 1rem;
+	padding: 1rem 1rem 0.5rem 1rem; /* Further reduced bottom padding */
 	box-shadow: 0 4px 14px rgba(16,24,40,0.04);
 	border: 2px solid transparent;
 	overflow: hidden;
@@ -4077,14 +4081,19 @@ body.is-preload #intro:not(.hidden)+#header+#nav {
 	flex-direction: column;
 	justify-content: flex-start;
 	align-items: stretch;
-	min-height: 320px;
+	min-height: auto; /* Allow height to fit content */
 	transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
 }
 
 #main>.posts>article:hover {
 	transform: translateY(-6px);
-	box-shadow: 0 10px 30px rgba(16,24,40,0.08);
-	border-color: #ffa114;
+	box-shadow: 0 10px 30px #0f182914;
+	border-color: #0f182914;
+}
+
+/* Reduce whitespace around post images */
+#main>.posts>article .image.fit {
+	margin: 0.25rem 0 0.25rem 0;
 }
 
 #main>.posts>article header {
@@ -4097,8 +4106,14 @@ body.is-preload #intro:not(.hidden)+#header+#nav {
 	font-size: clamp(0.95rem, 1.1vw, 1.05rem);
 	margin: 0 0 .15rem 0; /* tighter under-title spacing */
 	line-height: 1.08;
-	font-weight: 600;
-	color: #222;
+	font-weight: 800;
+	color: #ffffff;
+	text-shadow: 
+		-1px -1px 0 #000,  
+		 1px -1px 0 #000,
+		-1px  1px 0 #000,
+		 1px  1px 0 #000,
+		 2px 2px 0px rgba(0,0,0,0.2);
 	display: block; /* fill container to avoid overflow */
 	width: 100%;
 	max-width: 100%;
@@ -4112,8 +4127,14 @@ body.is-preload #intro:not(.hidden)+#header+#nav {
 
 /* Ensure links inside titles inherit styles */
 #main>.posts>article header h2 a {
-	color: inherit;
+	color: #ffffff !important;
 	text-decoration: none;
+	text-shadow: 
+		-1px -1px 0 #000,  
+		 1px -1px 0 #000,
+		-1px  1px 0 #000,
+		 1px  1px 0 #000,
+		 2px 2px 0px rgba(0,0,0,0.2);
 }
 
 /* Animated underline */
@@ -4136,7 +4157,7 @@ body.is-preload #intro:not(.hidden)+#header+#nav {
 /* Hover state */
 #main>.posts>article header h2:hover,
 #main>.posts>article header h2 a:hover {
-	color: #ff8a00;
+	color: #ff8a00 !important;
 	transform: translateY(-3px);
 }
 
@@ -5298,10 +5319,12 @@ body.is-preload #intro:not(.hidden)+#header+#nav {
     display: flex;
     overflow-x: auto;
     gap: 20px;
-    padding: 20px 5px;
+    padding: 20px;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: thin;
     justify-content: flex-start; /* Align left on mobile */
+    background-color: #212931;
+    border-radius: 15px;
 }
 
 /* Center on desktop if items fit */
@@ -5397,113 +5420,90 @@ body.is-preload #intro:not(.hidden)+#header+#nav {
     padding: 0;
 }
 
+.top-pick-card .button:hover {
+    background-color: #ffa114;
+    color: #fff !important;
+}
 
-/* Pros and Cons Styling - Modern Clean Design */
+
+/* Pros and Cons Styling - Compact Stacked */
 .pros-cons-container {
     display: flex;
-    flex-direction: row; /* Always side-by-side */
-    gap: 1rem;
-    margin-bottom: 2rem;
-    justify-content: space-between;
-    align-items: stretch;
+    flex-direction: column;
+    gap: 1px;
+    margin-bottom: 0; /* Removed margin completely */
+    padding: 6px;
+    background: #fcfcfc;
+    border-radius: 8px;
+    border: 1px solid #f0f0f0;
 }
 
 .pros-list, .cons-list {
-    flex: 1;
-    width: 48%; /* Force roughly half width */
-    padding: 1rem;
-    border-radius: 6px;
-    background: #ffffff;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    font-family: 'Source Sans Pro', Helvetica, sans-serif;
-    font-size: 0.9rem;
-    line-height: 1.5;
+    width: 100%;
+    padding: 0;
+    border: none;
+    background: transparent;
+    box-shadow: none;
     text-align: left;
-    box-sizing: border-box;
-}
-
-/* Pros Style */
-.pros-list {
-    border-top: 3px solid #d4af37; /* Soft Gold */
-    background: linear-gradient(to bottom, #fffbf0 0%, #ffffff 100%);
-    border-left: 1px solid #e5e7eb;
-    border-right: 1px solid #e5e7eb;
-    border-bottom: 1px solid #e5e7eb;
-}
-
-/* Cons Style */
-.cons-list {
-    border-top: 3px solid #bdc3c7; /* Soft Silver */
-    background: linear-gradient(to bottom, #f8f9fa 0%, #ffffff 100%);
-    border-left: 1px solid #e5e7eb;
-    border-right: 1px solid #e5e7eb;
-    border-bottom: 1px solid #e5e7eb;
 }
 
 .pros-list h4, .cons-list h4 {
-    margin-bottom: 0.75rem;
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
+    font-size: 0.75rem;
     font-weight: 800;
-    border-bottom: 1px solid rgba(0,0,0,0.05);
-    padding-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0 0 6px 0;
+    border: none;
+    padding: 0;
 }
 
-.pros-list h4 { color: #b08d26; } /* Darker Gold for text */
-.cons-list h4 { color: #7f8c8d; } /* Darker Silver/Grey for text */
+.pros-list h4 { color: #b08d26; }
+.cons-list h4 { color: #7f8c8d; }
 
 .pros-list ul, .cons-list ul {
+    margin: 0 !important;
+    padding: 0 !important;
     list-style: none;
-    padding: 0;
-    margin: 0;
 }
 
 .pros-list li, .cons-list li {
-    margin-bottom: 0.5rem;
-    display: flex;
-    align-items: flex-start;
-    color: #4b5563;
     font-size: 0.85rem;
+    line-height: 1.4;
+    margin-bottom: 3px;
+    padding-left: 16px;
+    position: relative;
+    color: #666;
 }
 
 .pros-list li:last-child, .cons-list li:last-child {
     margin-bottom: 0;
 }
 
-.pros-list li:before {
-    content: '\f00c'; /* FontAwesome Check */
+.pros-list li:before, .cons-list li:before {
+    position: absolute;
+    left: 0;
+    top: 2px;
     font-family: 'Font Awesome 5 Free';
     font-weight: 900;
-    color: 	#fdd03d; /* Gold Icon */
-    margin-right: 0.5rem;
-    margin-top: 3px;
-    font-size: 0.8em;
-    flex-shrink: 0;
+    font-size: 0.75rem;
+}
+
+.pros-list li:before {
+    content: '\f00c';
+    color: #fdd03d;
 }
 
 .cons-list li:before {
-    content: '\f00d'; /* FontAwesome Times */
-    font-family: 'Font Awesome 5 Free';
-    font-weight: 900;
-    color: #bdc3c7; /* Silver Icon */
-    margin-right: 0.5rem;
-    margin-top: 3px;
-    font-size: 0.8em;
-    flex-shrink: 0;
+    content: '\f00d';
+    color: #bdc3c7;
 }
 
 /* Mobile Optimization */
 @media screen and (max-width: 736px) {
     .pros-cons-container {
-        flex-direction: column; /* Stack vertically on mobile */
-        gap: 1rem;
+        padding: 10px;
     }
-    
-    .pros-list, .cons-list {
-        width: 100%; /* Full width */
-        padding: 1rem;
-    }
+}
 
     .pros-list li, .cons-list li {
         font-size: 0.85rem; /* Slightly smaller for mobile */
@@ -5518,6 +5518,13 @@ body.is-preload #intro:not(.hidden)+#header+#nav {
 /* Filter Buttons */
 .filter-btn {
     margin: 0.25rem;
+}
+
+@media screen and (max-width: 736px) {
+    .filter-btn {
+        margin: 0.5rem;
+        padding: 0 1rem; /* Slightly wider touch target */
+    }
 }
 
 /* Section Divider with Icon */
