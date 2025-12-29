@@ -77,11 +77,20 @@ document.addEventListener('DOMContentLoaded', function () {
         products.forEach(product => {
             const productCategory = product.getAttribute('data-category');
             const productSubCategory = product.getAttribute('data-subcategory');
+            const productPriceLevel = product.getAttribute('data-price-level');
 
             let isVisible = false;
 
             if (category === 'all') {
                 isVisible = true;
+            } else if (category === 'budget') {
+                if (subCategory === 'all' || !subCategory) {
+                    isVisible = true;
+                } else {
+                    if (productPriceLevel === subCategory) {
+                        isVisible = true;
+                    }
+                }
             } else if (productCategory && productCategory.split(' ').includes(category)) {
                 if (subCategory === 'all' || !subCategory) {
                     isVisible = true;
