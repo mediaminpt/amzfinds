@@ -136,9 +136,9 @@ document.addEventListener('DOMContentLoaded', function () {
     // Dropdown Behavior
     dropdowns.forEach(dropdown => {
         // Close on mouse leave
-        dropdown.addEventListener('mouseleave', () => {
+        /* dropdown.addEventListener('mouseleave', () => {
             dropdown.classList.remove('active');
-        });
+        }); */
 
         // Close dropdown when clicking outside
         document.addEventListener('click', (e) => {

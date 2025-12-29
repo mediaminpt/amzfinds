@@ -5634,9 +5634,9 @@ body.is-preload #intro:not(.hidden)+#header+#nav {
     border: none !important;
 }
 
-.filter-dropdown:hover .filter-dropdown-content {
+/* .filter-dropdown:hover .filter-dropdown-content {
     display: block;
-}
+} */
 
 /* Mobile support for touch */
 .filter-dropdown.active .filter-dropdown-content {
