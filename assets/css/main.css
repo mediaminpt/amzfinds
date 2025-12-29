@@ -4110,7 +4110,7 @@ body.is-preload #intro:not(.hidden)+#header+#nav {
 /* Product title */
 #main>.posts>article header h2 {
 	font-family: 'Inter', sans-serif;
-	font-size: clamp(0.95rem, 1.1vw, 1.05rem);
+	font-size: clamp(0.85rem, 1vw, 0.95rem);
 	margin: 0 0 .15rem 0; /* tighter under-title spacing */
 	line-height: 1.08;
 	font-weight: 800;
@@ -4122,11 +4122,22 @@ body.is-preload #intro:not(.hidden)+#header+#nav {
 	width: 100%;
 	max-width: 100%;
 	box-sizing: border-box;
-	overflow-wrap: anywhere; /* allow long words/URLs to break */
-	word-break: break-word;
-	hyphens: auto;
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+	word-break: normal;
+	hyphens: none;
+	white-space: normal;
 	position: relative; /* for underline */
 	transition: color .18s ease, transform .18s ease;
+}
+
+@media screen and (max-width: 736px) {
+	#main>.posts>article header h2:active,
+	#main>.posts>article header h2.mobile-expanded {
+		display: block;
+		overflow: visible;
+		-webkit-line-clamp: unset;
+	}
 }
 
 /* Ensure links inside titles inherit styles */
@@ -4269,15 +4280,16 @@ body.is-preload #intro:not(.hidden)+#header+#nav {
     }
 
     #main>.posts>article header h2 {
-        font-size: .85rem;
+        font-size: .75rem;
         margin: 0;
         line-height: 1.05;
         color: inherit;
         display: block; 
         width: 100%;
         max-width: 100%;
-        overflow-wrap: anywhere;
-        word-break: break-word;
+        overflow-wrap: break-word;
+        word-break: normal;
+        hyphens: none;
     }
 
     #main>.posts>article header h2:first-child {
@@ -5535,6 +5547,13 @@ body.is-preload #intro:not(.hidden)+#header+#nav {
         width: 100%;
         margin: 0 !important;
         display: block;
+    }
+
+    /* Center the last item if it's alone on a row */
+    .filter-container > :last-child:nth-child(odd) {
+        grid-column: 1 / -1;
+        width: calc(50% - 0.375rem);
+        margin: 0 auto !important;
     }
     
     .filter-btn {

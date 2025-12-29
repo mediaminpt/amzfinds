@@ -263,4 +263,17 @@ window.initMain = function($) {
 
 		}
 
+    // Mobile Title Expansion
+    if (browser.mobile) {
+        var $titles = $('.posts article header h2');
+        
+        $titles.on('touchstart', function() {
+            $(this).addClass('mobile-expanded');
+        });
+        
+        $titles.on('touchend touchcancel', function() {
+            $(this).removeClass('mobile-expanded');
+        });
+    }
+
 };
