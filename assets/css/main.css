@@ -4143,11 +4143,11 @@ body.is-preload #intro:not(.hidden)+#header+#nav {
 /* Ensure links inside titles inherit styles */
 #main>.posts>article header h2 a {
 	border-bottom: none;
-	background-image: linear-gradient(120deg, var(--highlight-color) 0%, var(--highlight-color) 100%);
+	/* background-image: linear-gradient(120deg, var(--highlight-color) 0%, var(--highlight-color) 100%);
 	background-repeat: no-repeat;
 	background-size: 100% 0.4em;
 	background-position: 0 88%;
-	transition: background-size 0.25s ease-in;
+	transition: background-size 0.25s ease-in; */
 	color: #212931 !important;
 	text-decoration: none;
 }
@@ -4161,7 +4161,7 @@ body.is-preload #intro:not(.hidden)+#header+#nav {
 /* Hover state */
 #main>.posts>article header h2:hover,
 #main>.posts>article header h2 a:hover {
-	background-size: 100% 88%;
+	/* background-size: 100% 88%; */
 	transform: translateY(-3px);
 }
 
