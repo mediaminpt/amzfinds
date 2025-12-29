@@ -94,8 +94,14 @@
 				header {
 					h2 {
 						font-family: _font(family-modern);
+						color: #212931;
+						display: -webkit-box;
+						-webkit-line-clamp: 2;
+						-webkit-box-orient: vertical;
+						overflow: hidden;
 						
 						a {
+							color: #212931;
 							border-bottom: none;
 							text-decoration: none;
 							background-image: linear-gradient(120deg, var(--highlight-color) 0%, var(--highlight-color) 100%);
