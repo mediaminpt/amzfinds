@@ -6,7 +6,11 @@
 @import 'libs/html-grid';
 @import 'libs/fixed-grid';
 @import 'fontawesome-all.min.css';
-@import url('https://fonts.googleapis.com/css?family=Merriweather:300,700,300italic,700italic|Source+Sans+Pro:900');
+@import url('https://fonts.googleapis.com/css?family=Merriweather:300,700,300italic,700italic|Source+Sans+Pro:900|Inter:400,600,900');
+
+:root {
+	--highlight-color: rgba(255, 235, 59, 0.5); /* Yellow marker effect */
+}
 
 /*
 	Massively by HTML5 UP
