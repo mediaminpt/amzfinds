@@ -5513,8 +5513,8 @@ body.is-preload #intro:not(.hidden)+#header+#nav {
     }
 
     .pros-list ul {
-        height: 80px; /* Fixed height to ensure all cards are equal length */
-        overflow-y: auto;
+        height: auto; /* Changed from fixed height to auto to remove excess space */
+        overflow-y: visible;
     }
 
     .cons-list ul {
