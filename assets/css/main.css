@@ -4942,6 +4942,7 @@ body.is-preload #intro:not(.hidden)+#header+#nav {
 	right: 0.75rem;
 	border: 0;
 	color: #ffffff;
+	mix-blend-mode: difference;
 	font-family: "Source Sans Pro", Helvetica, sans-serif;
 	font-size: 0.9rem;
 	font-weight: 900;
@@ -4970,13 +4971,13 @@ body.is-preload #intro:not(.hidden)+#header+#nav {
 }
 
 #navPanelToggle.alt {
-	background-color: rgba(255, 255, 255, 0.875);
-	box-shadow: 0 0.125rem 0.75rem 0 rgba(30, 37, 45, 0.25);
-	color: #212931;
+	background-color: transparent;
+	box-shadow: none;
+	color: #ffffff;
 }
 
 #navPanelToggle.alt:hover {
-	background-color: #ffffff;
+	background-color: transparent;
 }
 
 @media screen and (max-width: 980px) {
