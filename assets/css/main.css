@@ -2175,6 +2175,45 @@ hr {
 	padding: 0;
 }
 
+.box.cta {
+	text-align: center;
+	border: 0;
+	background-color: #ffffff;
+	border-radius: 8px;
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+	padding: 3rem 2rem;
+	position: relative;
+	overflow: hidden;
+	margin-top: 3rem;
+}
+
+.box.cta::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 1px;
+	background: rgba(0, 0, 0, 0.1);
+}
+
+.box.cta h4 {
+	font-size: 1.5rem;
+	margin-bottom: 0.75rem;
+	color: #212931;
+	text-align: center;
+}
+
+.box.cta p {
+	font-size: 1rem;
+	color: #717981;
+	max-width: 600px;
+	margin: 0 auto;
+	line-height: 1.6;
+	margin-bottom: 0;
+	text-align: center;
+}
+
 .box {
 	border-color: #eeeeee;
 }
@@ -5435,7 +5474,7 @@ body.is-preload #intro:not(.hidden)+#header+#nav {
 .pros-cons-container {
     display: flex;
     flex-direction: column;
-    gap: 1px;
+    gap: 9px;
     margin-bottom: 0; /* Removed margin completely */
     padding: 6px;
     background: #fcfcfc;
@@ -5462,8 +5501,8 @@ body.is-preload #intro:not(.hidden)+#header+#nav {
     padding: 0;
 }
 
-.pros-list h4 { color: #b08d26; }
-.cons-list h4 { color: #7f8c8d; }
+.pros-list h4 { color: #6ca800; }
+.cons-list h4 { color: #ff5c5c; }
 
 .pros-list ul, .cons-list ul {
     margin: 0 !important;
@@ -5477,7 +5516,7 @@ body.is-preload #intro:not(.hidden)+#header+#nav {
     margin-bottom: 3px;
     padding-left: 16px;
     position: relative;
-    color: #666;
+    color: #404040;
 }
 
 .pros-list li:last-child, .cons-list li:last-child {
@@ -5495,12 +5534,12 @@ body.is-preload #intro:not(.hidden)+#header+#nav {
 
 .pros-list li:before {
     content: '\f00c';
-    color: #fdd03d;
+    color: #6ca800;
 }
 
 .cons-list li:before {
     content: '\f00d';
-    color: #bdc3c7;
+    color: #ff5c5c;
 }
 
 /* Mobile Optimization */
