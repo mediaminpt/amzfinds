@@ -3810,7 +3810,7 @@ body.is-preload #intro:not(.hidden)+#header+#nav {
 	overflow: visible;
 	padding: 0 2rem 0 0;
 	position: relative;
-	width: calc(100% - 4rem);
+	width: calc(100% - 8rem);
 	max-width: 72rem;
 	z-index: 10;
 	border-radius: 0.5rem 0.5rem 0 0;
