@@ -4944,6 +4944,12 @@ body.is-preload #intro:not(.hidden)+#header+#nav {
 	padding-left: 0;
 }
 
+#copyright .copyright-credits {
+	font-weight: 300;
+	font-size: 0.6rem;
+	opacity: 0.6;
+}
+
 @media screen and (max-width: 1280px) {
 
 	#copyright {
