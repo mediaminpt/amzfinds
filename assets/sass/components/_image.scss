@@ -73,6 +73,13 @@
 
 			&.main {
 				margin: _size(element-margin) 0;
+
+				img {
+					height: auto;
+					min-height: 250px;
+					object-fit: cover;
+					object-position: center;
+				}
 			}
 		}
 	}
