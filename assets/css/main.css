@@ -2794,7 +2794,7 @@ input[type="radio"]:focus+label:before {
 	aspect-ratio: 5 / 4;
 	overflow: hidden;
 	max-height: 420px;
-	background: #f8f8f8;
+	background: #ffffff;
 	border-radius: 8px;
 } 
 
@@ -4332,10 +4332,11 @@ body.is-preload #intro:not(.hidden)+#header+#nav {
     }
 
     #main>.posts>article header h2:first-child {
-        display: -webkit-box;
-        -webkit-line-clamp: 2;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
+        display: block;
+        -webkit-line-clamp: unset;
+        overflow: visible;
+        height: auto;
+        white-space: normal;
     }
 
     #main>.posts>article header h2:last-child {
