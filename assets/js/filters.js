@@ -127,11 +127,38 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             }
         });
+
+        // Save selection to LocalStorage
+        localStorage.setItem('minhaCategoriaAtiva', JSON.stringify({ category, subCategory }));
     }
 
-    // Set "All" as primary initially
-    const allBtn = document.querySelector('.filter-btn[data-filter="all"]');
-    if (allBtn) allBtn.classList.add('primary');
+    // Set "All" as primary initially or restore from LocalStorage
+    const savedState = localStorage.getItem('minhaCategoriaAtiva');
+    let restored = false;
+
+    if (savedState) {
+        try {
+            const { category, subCategory } = JSON.parse(savedState);
+            if (category) {
+                applyFilter(category, subCategory || 'all'); 
+                const activeBtn = document.querySelector(`.filter-btn[data-filter="${category}"]`);
+                if (activeBtn) {
+                    updateActiveState(activeBtn);
+                    restored = true;
+                }
+            }
+        } catch (e) {
+            console.error('Error restoring filter state:', e);
+        }
+    }
+
+    if (!restored) {
+        const allBtn = document.querySelector('.filter-btn[data-filter="all"]');
+        if (allBtn) {
+            allBtn.classList.add('primary');
+            applyFilter('all', 'all'); // Ensure consistent initial state
+        }
+    }
     
     // Dropdown Behavior
     dropdowns.forEach(dropdown => {
