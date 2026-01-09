@@ -5520,8 +5520,8 @@ body.is-preload #intro:not(.hidden)+#header+#nav {
     padding: 0;
 }
 
-.pros-list h4 { color: #6ca800; }
-.cons-list h4 { color: #ff5c5c; }
+.pros-list h4 { color: #c8ad13; }
+.cons-list h4 { color: #d45f5f; }
 
 .pros-list ul, .cons-list ul {
     margin: 0 !important;
@@ -5553,12 +5553,12 @@ body.is-preload #intro:not(.hidden)+#header+#nav {
 
 .pros-list li:before {
     content: '\f00c';
-    color: #6ca800;
+    color: #c8ad13;
 }
 
 .cons-list li:before {
     content: '\f00d';
-    color: #ff5c5c;
+    color:  #d45f5f;
 }
 
 /* Mobile Optimization */
