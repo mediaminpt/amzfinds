@@ -5493,12 +5493,12 @@ body.is-preload #intro:not(.hidden)+#header+#nav {
 .pros-cons-container {
     display: flex;
     flex-direction: column;
-    gap: 9px;
-    margin-bottom: 0; /* Removed margin completely */
+    gap: 3px;
+    margin-bottom: 0; 
     padding: 6px;
-    background: #fcfcfc;
+    background: #ffffff;
     border-radius: 8px;
-    border: 1px solid #f0f0f0;
+    border: 0px solid #ffffff;
 }
 
 .pros-list, .cons-list {
