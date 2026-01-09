@@ -46,6 +46,10 @@ document.addEventListener('DOMContentLoaded', function () {
             // Find the main button for this category
             const mainBtn = document.querySelector(`.filter-btn[data-filter="${parentCategory}"]`);
             if (mainBtn) updateActiveState(mainBtn);
+            
+            // Highlight the clicked sub-filter button
+            subFilterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
 
             // Close the dropdown
             const dropdown = btn.closest('.filter-dropdown');
@@ -68,6 +72,9 @@ document.addEventListener('DOMContentLoaded', function () {
             b.classList.remove('primary');
             b.classList.remove('active');
         });
+        // Also clear sub-filter buttons active state
+        subFilterBtns.forEach(b => b.classList.remove('active'));
+        
         activeBtn.classList.add('primary');
         activeBtn.classList.add('active');
     }

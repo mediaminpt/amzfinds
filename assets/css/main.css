@@ -5729,3 +5729,20 @@ body.is-preload #intro:not(.hidden)+#header+#nav {
 }
 
 
+
+
+/* Active Filter Styling - Visual Feedback */
+/* Main buttons (Dark theme) */
+.filter-btn.active {
+    background-color: transparent !important;
+    color: #18bfef !important; /* Blue text */
+    box-shadow: inset 0 0 0 2px #18bfef !important; /* Blue border */
+}
+
+/* Sub-buttons inside dropdown (Light theme) */
+.sub-filter-btn.active {
+    background-color: #e6f9ff !important; /* Very light blue */
+    color: #18bfef !important; /* Blue text */
+    box-shadow: none !important;
+    font-weight: bold;
+}
