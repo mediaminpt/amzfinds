@@ -2911,6 +2911,9 @@ body.index-page #main > .posts .actions.special {
 	display: -webkit-flex;
 	display: -ms-flex;
 	display: flex !important;
+	height: auto !important;
+	margin: 2rem 0 0 0 !important;
+	overflow: visible !important;
 	-moz-justify-content: center;
 	-webkit-justify-content: center;
 	-ms-justify-content: center;
@@ -4265,6 +4268,17 @@ body.is-preload #intro:not(.hidden)+#header+#nav {
 	border-radius: 6px;
 }
 
+#main > .posts > article .button.primary {
+  	height: 3em;
+    line-height: 3em;
+    width: auto; 
+    padding: 0 20px; 
+    display: block; 
+    margin-top: auto;  
+    margin-left: auto;  
+    margin-right: auto; 
+}
+
 
 #main>.posts>article p {
 	display: -webkit-box;
@@ -5329,7 +5343,7 @@ body.is-preload #intro:not(.hidden)+#header+#nav {
 
 /* Product Card Enhancements */
 .product-card .button.primary {
-    background-color: #FF9900; /* Amazon Orange */
+    background-color: #212931; 
     color: #fff !important;
     font-weight: bold;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
@@ -5337,7 +5351,7 @@ body.is-preload #intro:not(.hidden)+#header+#nav {
 }
 
 .product-card .button.primary:hover {
-    background-color: #e68a00;
+    background-color: #18bfef;
     transform: translateY(-2px);
 }
 
